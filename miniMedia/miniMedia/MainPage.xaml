@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="miniMedia.MainPage"
+             BackgroundColor="DarkGray"    
+             >
+               
+    <StackLayout>
+        <Frame BackgroundColor="#1F1F1F" Padding="24" CornerRadius="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60*" />
+                    <ColumnDefinition Width="40*" />
+                </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="MiniMedia" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                    <Image Grid.Column="1" WidthRequest="64" Source="Resources/drawable/ic_launcher.png"></Image>
+            </Grid>
+        </Frame>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="24*" />
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="50*"/>
+
+            </Grid.ColumnDefinitions>
+            <Button IsEnabled="False" Grid.Column="1" x:Name="previousBtn" Clicked="previousBtn_Clicked" Text="⏮️"></Button>
+            <Button IsEnabled="False" Grid.Column="2" x:Name="playBtn" Clicked="playBtn_Clicked"  Text="▶️"/>
+            <Button IsEnabled="False" Grid.Column="3" x:Name="nextBtn" Clicked="nextBtn_Clicked" Text="⏭️"></Button>
+
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="12*"  />
+                <ColumnDefinition Width="8*"  />
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0">Now playing:</Label>
+            <Label Grid.Column="1" x:Name="lblTitle"></Label>
+            <Button x:Name="subscribeBtn" Clicked="subscribeBtn_Clicked" IsEnabled="False"  Grid.Column="2" Text="❤️"/>
+        </Grid>
+        <Label>SetVolume:</Label>
+        <Frame BackgroundColor="#1F1F1F" CornerRadius="5">
+          
+            <Slider x:Name="volumeSlider" ValueChanged="volumeSlider_ValueChanged"/>
+        </Frame>
+        <Label>Set Time:</Label>
+        <Frame   BackgroundColor="#1F1F1F" CornerRadius="5">
+            
+            <Slider x:Name="timeSlider"  ValueChanged="timeSlider_ValueChanged"/>
+        </Frame>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*" />
+                <ColumnDefinition Width="50*" />
+            </Grid.ColumnDefinitions>
+            <ImageButton HeightRequest="135" Padding="4" x:Name="selectMix" Clicked="selectMix_Clicked" Source="Resources/drawable/imgProblem.jpg"  Grid.Column="0"/>
+            <ImageButton HeightRequest="135" Padding="4" x:Name="selectMix2" Clicked="selectMix2_Clicked" Source="Resources/drawable/imgZyzz.jpg" Grid.Column="1"/>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="60*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+            <Button HeightRequest="60" Padding="4" x:Name="selectSubscribed" Clicked="selectSubscribed_Clicked"  Grid.Column="1" Text="Subscribed"/>
+            
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
